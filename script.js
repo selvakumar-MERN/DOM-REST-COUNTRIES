@@ -10,6 +10,9 @@ h.setAttribute("id","title")
 const row=document.createElement("div")
 div.append(row)
 row.setAttribute("class","row")
+
+//creating card and fetching datas from rest countries
+
 const countries =async()=>{
 try{
 await fetch("https://restcountries.com/v3.1/all").
@@ -53,9 +56,14 @@ const button=document.createElement("button");
 btndiv.append(button)
 button.setAttribute("class","btn btn-primary")
 button.innerHTML="Click For Weather"
-
+    
+// adding event listener for a weather button
+    
 button.addEventListener("click",async()=>{
     btndiv.innerHTML="";
+    
+//getting attribute value cardhead1,card1 and calling openweather api using lat and long 
+    
 const cname=cardhead1.getAttribute("cname")
  const cardlat=card1.getAttribute("lat")
  const cardlon=card1.getAttribute("lon")   
